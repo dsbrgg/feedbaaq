@@ -1,13 +1,14 @@
 const express = require('express');
 const hbs = require('hbs');
-const fs = require('fs');
+const bodyParser = require('body-parser');
 
 const port = process.env.PORT || 3000;
 var app = express();
 
 // hbs.registerPartials(__dirname + '/views/partials');
-// app.set('view engine', 'hbs');
-// app.use(express.static(__dirname + '/public'));
+app.set('view engine', 'hbs');
+app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
 
 // app.use((req, res, next) => {
 // 	var now = new Date().toString();
@@ -25,11 +26,7 @@ var app = express();
 // });
 
 app.get('/', (req, res) => {
-	res.send('<h1>OXENTE</h1>');
-	// res.render('home.hbs', {
-	// 	title : 'Home Page',
-	// 	welcomeMessage : 'Whats up'
-	// });
+	res.render('home.hbs');
 });
 
 app.get('/bad', (req, res) => {
