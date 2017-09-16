@@ -3,5 +3,19 @@ html {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: 100% auto;
+	background-size: cover;
+}
+
+@media (min-width:768px) {
+	section {
+		background-image: url(../img/bg-mobile2.png);
+		background-repeat: no-repeat;
+		background-attachment: scroll;
+		background-position: center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		background-size: cover;
+		-o-background-size: cover;
+		min-height: 725px;
+	}
 }
